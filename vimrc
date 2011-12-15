@@ -73,6 +73,7 @@ if has("autocmd")
     \   exe "normal! g`\"" |
     \ endif
 
+  " Highlight the ends of lines which are over 100 columns in length.
   autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
   autocmd BufEnter * match Overlength /\%100v.*/
 
