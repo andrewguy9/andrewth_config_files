@@ -28,7 +28,7 @@ set cscopetag
 colorscheme desert
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set backup		" keep a backup file
+set writebackup        " keep a backup file only while copying
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
