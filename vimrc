@@ -84,7 +84,11 @@ if has("autocmd")
 
   " Highlight white space at end of lines
   highlight TailWhiteSpace ctermbg=darkgrey guibg=darkgrey
-  autocmd BufEnter * let mach1=matchadd('TailWhiteSpace', '\s\+$') 
+  autocmd BufEnter * let mach1=matchadd('TailWhiteSpace', '\s\+$')
+
+  " Highlight tabs
+  highlight TabHighlight ctermbg=red guibg=red
+  autocmd BufEnter * let mach3=matchadd('TabHighlight', '\t')
 
   augroup END
 
