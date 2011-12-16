@@ -37,6 +37,7 @@ set rulerformat=(%l,%c%V)\ %P
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set ignorecase          " turn off case sensitivity
+set cursorline          " highlight the current line.
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
