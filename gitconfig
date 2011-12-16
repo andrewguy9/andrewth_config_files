@@ -1,7 +1,7 @@
 #[diff]
-#	external = /Users/andrewguy9/.gitvimdiff.sh
+#       external = /Users/andrewguy9/.gitvimdiff.sh
 [merge]
-	tool = mvim
+        tool = mvim
 [mergetool "mvim"]
-	cmd = /Applications/MacVim.app/Contents/MacOS/Vim -f -d -g $LOCAL $MERGED $REMOTE
-	keepbackup = false
+        cmd = /Applications/MacVim.app/Contents/MacOS/Vim -f -d -g $LOCAL $MERGED $REMOTE
+        keepbackup = false

@@ -31,11 +31,11 @@ colorscheme desert
 set statusline=%<%f\ %h%m%r\ %y\ buf:%n\ line_format:%{&ff}%=(%l,%c%V)\ %P
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set writebackup        " keep a backup file only while copying
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
+set history=50          " keep 50 lines of command line history
+set ruler               " show the cursor position all the time
 set rulerformat=(%l,%c%V)\ %P
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set showcmd             " display incomplete commands
+set incsearch           " do incremental searching
 set ignorecase          " turn off case sensitivity
 set cursorline          " highlight the current line.
 
@@ -99,6 +99,6 @@ endif " has("autocmd")
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+                  \ | wincmd p | diffthis
 endif
 
