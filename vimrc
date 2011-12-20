@@ -38,6 +38,7 @@ set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 set ignorecase          " turn off case sensitivity
 set cursorline          " highlight the current line.
+set number              " Add line numbers
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
