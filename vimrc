@@ -1,6 +1,6 @@
 " Compatability
 set nocompatible " Turn off vi compatability
-"behave mswin
+behave mswin
 
 " Turn on Windows keynbindings
 "source $VIMRUNTIME/mswin.vim
