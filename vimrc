@@ -81,8 +81,7 @@ if has("autocmd")
     \ endif
 
   " Highlight the ends of lines which are over 100 columns in length.
-  "autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=red
-  highlight OverLength ctermbg=darkgrey guibg=red
+  highlight OverLength ctermbg=darkgrey guibg=darkgrey
   autocmd BufEnter * let mach2=matchadd('OverLength', '\%102v.*', -1)
 
   " Highlight white space at end of lines
@@ -90,7 +89,7 @@ if has("autocmd")
   autocmd BufEnter * let mach1=matchadd('TailWhiteSpace', '[!\s]\s\+$', -1)
 
   " Highlight tabs
-  highlight TabHighlight ctermbg=red guibg=red
+  highlight TabHighlight ctermbg=darkgrey guibg=darkgrey
   autocmd BufEnter * let mach3=matchadd('TabHighlight', '\t', -1)
 
   augroup END
