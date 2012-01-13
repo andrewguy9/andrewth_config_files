@@ -3,7 +3,7 @@ set nocompatible " Turn off vi compatability
 behave mswin
 
 " Turn on Windows keynbindings
-"source $VIMRUNTIME/mswin.vim
+source $VIMRUNTIME/mswin.vim
 
 " Set tabs to 8 spaces. Force vim to use spaces over tabs.
 set tabstop=8
