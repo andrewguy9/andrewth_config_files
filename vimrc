@@ -2,6 +2,12 @@
 set nocompatible " Turn off vi compatability
 behave mswin
 
+" Turn off c++ curly bracket errors until vim gets fixed to work with c++ lambdas.
+hi link cErrInParen Normal
+
+" Font
+set guifont=monospace\ 8
+
 " Turn on Windows keynbindings
 source $VIMRUNTIME/mswin.vim
 
@@ -19,10 +25,6 @@ set wrapmargin=0
 
 " Make folding determined by syntax
 set fdm=syntax
-
-" Set tagging options
-set csprg=gtags-cscope
-set cscopetag
 
 " Set the color
 colorscheme desert
@@ -82,15 +84,15 @@ if has("autocmd")
 
   " Highlight the ends of lines which are over 100 columns in length.
   highlight OverLength ctermbg=darkgrey guibg=darkgrey
-  autocmd BufEnter * let mach2=matchadd('OverLength', '\%102v.*', -1)
+  autocmd BufEnter * let machLongLines=matchadd('OverLength', '\%102v.*', -1)
 
   " Highlight white space at end of lines
   highlight TailWhiteSpace ctermbg=darkgrey guibg=darkgrey
-  autocmd BufEnter * let mach1=matchadd('TailWhiteSpace', '[^\s]\s\+$', -1)
+  autocmd BufEnter * let machTailWhiteSpace=matchadd('TailWhiteSpace', '[^\s]\s\+$', -1)
 
   " Highlight tabs
   highlight TabHighlight ctermbg=darkgrey guibg=darkgrey
-  autocmd BufEnter * let mach3=matchadd('TabHighlight', '\t', -1)
+  autocmd BufEnter * let machTabs=matchadd('TabHighlight', '\t', -1)
 
   augroup END
 
