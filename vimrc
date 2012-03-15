@@ -79,7 +79,7 @@ function! StyleOn()
         " Highlight the ends of lines which are over 100 columns in length.
         if ! exists('w:matchLongLines') || ! w:matchLongLines
                 highlight OverLength ctermbg=darkgrey guibg=darkgrey
-                let w:matchLongLines=matchadd('OverLength', '\%102v.*', -1)
+                let w:matchLongLines=matchadd('OverLength', '\%>100v.\+', -1)
         endif
 
         " Highlight white space at end of lines
