@@ -83,19 +83,56 @@ if has("autocmd")
     \   exe "normal! g`\"" |
     \ endif
 
-  " Highlight the ends of lines which are over 100 columns in length.
-  highlight OverLength ctermbg=darkgrey guibg=darkgrey
-  autocmd BufEnter * let machLongLines=matchadd('OverLength', '\%102v.*', -1)
+function! StyleOn()
+        let w:style = 1
+        " Highlight the ends of lines which are over 100 columns in length.
+        if ! exists('w:matchLongLines') || ! w:matchLongLines
+                highlight OverLength ctermbg=darkgrey guibg=darkgrey
+                let w:matchLongLines=matchadd('OverLength', '\%102v.*', -1)
+        endif
 
-  " Highlight white space at end of lines
-  highlight TailWhiteSpace ctermbg=darkgrey guibg=darkgrey
-  autocmd BufEnter * let machTailWhiteSpace=matchadd('TailWhiteSpace', '[^\s]\s\+$', -1)
+        " Highlight white space at end of lines
+        if ! exists('w:matchTailWhiteSpace') || ! w:matchTailWhiteSpace
+                highlight TailWhiteSpace ctermbg=darkgrey guibg=darkgrey
+                let w:matchTailWhiteSpace=matchadd('TailWhiteSpace', '[^\s]\s\+$', -1)
+        endif
 
-  " Highlight tabs
-  highlight TabHighlight ctermbg=darkgrey guibg=darkgrey
-  autocmd BufEnter * let machTabs=matchadd('TabHighlight', '\t', -1)
+        " Highlight tabs
+        if ! exists('w:matchTabs') ||  ! w:matchTabs 
+                highlight TabHighlight ctermbg=darkgrey guibg=darkgrey
+                let w:matchTabs=matchadd('TabHighlight', '\t', -1)
+        endif
+endfunction
 
-  augroup END
+function! StyleOff()
+        let w:style = 0
+        if exists('w:matchLongLines') && w:matchLongLines
+                call matchdelete(w:matchLongLines)
+                let w:matchLongLines = !w:matchLongLines
+        endif
+        if exists('w:matchTailWhiteSpace') && w:matchTailWhiteSpace
+                call matchdelete(w:matchTailWhiteSpace)
+                let w:matchTailWhiteSpace = !w:matchTailWhiteSpace
+        endif
+        if exists('w:matchTabs') && w:matchTabs
+                call matchdelete(w:matchTabs)
+                let w:matchTabs = !w:matchTabs
+        endif
+endfunction
+
+function! StyleToggle()
+        let w:style = exists('w:style') ? !w:style : 1
+
+        if w:style
+                call StyleOn()
+        else
+                call StyleOff()
+        endif
+endfunction
+
+nmap s :call StyleToggle()<CR>
+
+augroup END
 
 endif " has("autocmd")
 
