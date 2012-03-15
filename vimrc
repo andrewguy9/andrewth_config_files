@@ -25,6 +25,7 @@ set wrapmargin=0
 
 " Make folding determined by syntax
 set fdm=syntax
+set nofoldenable
 
 " Set the color
 colorscheme desert
