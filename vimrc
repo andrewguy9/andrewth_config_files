@@ -135,3 +135,6 @@ if !exists(":DiffOrig")
                   \ | wincmd p | diffthis
 endif
 
+" Turn on Style Highlighting
+call StyleOn()
+
