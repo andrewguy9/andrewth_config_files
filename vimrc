@@ -17,12 +17,6 @@ set shiftwidth=8
 set softtabstop=8
 set expandtab
 
-" Force lines to be no longer than 100 columns
-set textwidth=100
-set formatoptions=cqt
-set wrapmargin=0
-"set wrap!
-
 " Make folding determined by syntax
 set fdm=syntax
 set nofoldenable
@@ -69,9 +63,6 @@ if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
-
-  " For all text files set 'textwidth' to 100 characters.
-  autocmd FileType text setlocal textwidth=100
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
