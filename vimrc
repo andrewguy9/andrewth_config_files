@@ -8,9 +8,6 @@ hi link cErrInParen Normal
 " Font
 set guifont=monospace\ 8
 
-" Turn on Windows keynbindings
-source $VIMRUNTIME/mswin.vim
-
 " Set tabs to 8 spaces. Force vim to use spaces over tabs.
 set tabstop=8
 set shiftwidth=8
